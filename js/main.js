@@ -1,3 +1,25 @@
+var request = new XMLHttpRequest();
+setInterval(function() {
+  	request.open('GET', 'http://api.revoice.ru/now-playing/all.json');
+  	request.send(null);
+ }, 10000);
+
+request.onreadystatechange = function(e) {
+    if (this.readyState == 4) {
+        if (this.status == 200) {
+            var response = JSON.parse(this.responseText);
+            updateArtist(response.fourteen.artist);
+        }
+        else {
+            
+        }
+    }
+}
+
+function updateArtist(data) {
+    var dart = document.getElementById("track");
+    dart.innerHTML = data;
+}
 function play() {
 	if ( $('#play').hasClass('glyphicon-play') ){
 		$('#play').removeClass('glyphicon-play');
@@ -21,4 +43,5 @@ function mute () {
 		document.getElementById('player').volume=1;
 		$('#mute').addClass('glyphicon-volume-off');
 	}
+
 }

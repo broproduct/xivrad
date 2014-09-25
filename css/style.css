@@ -32,3 +32,14 @@ body{
 .glycolor:hover{
 	color:#009BE3;
 }
+#track{
+	color: #FFFFFF;
+	position: absolute;
+	height: 20px;
+	width: 360px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	
+}
