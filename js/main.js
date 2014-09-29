@@ -8,7 +8,7 @@ request.onreadystatechange = function(e) {
     if (this.readyState == 4) {
         if (this.status == 200) {
             var response = JSON.parse(this.responseText);
-            updateArtist(response.fourteen.artist);
+            updateArtist(response.fourteen.song);
         }
         else {
             
